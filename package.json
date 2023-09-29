@@ -1,0 +1,64 @@
+{
+  "name": "html-au",
+  "version": "0.0.1-beta",
+  "description": "HTML driven reactivity with customElements",
+  "author": "Eric Rohlfs",
+  "main": "./dist/js/index.js",
+  "scripts": {
+    "build": "tsc --project tsconfig.json & rollup --config ./rollup.browser.cfg & rollup --config ./rollup.karma.cfg & terser ./dist/browser/js/index.js -o ./dist/browser/js/index.min.js --compress ecma=2015,computed_props=false",
+    "dev": "rollup --config ./rollup.browser.cfg --watch",
+    "test-once": "rollup --config ./rollup.karma.cfg & rollup --config ./rollup.browser.cfg",
+    "build-test": "rollup --config ./rollup.karma.cfg --watch",
+    "test-dev": "karma start karma.conf.cjs",
+    "serve-user-form": "node ./example/user-form/server.js",
+    "minify-browser":"terser ./dist/browser/js/index.js -o ./dist/browser/js/index.min.js --compress ecma=2015,computed_props=false"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/attributes-unlimited/html-au.git"
+  },
+  "license": "MIT",
+  "files": [
+    "./src",
+    "dist/browser/js",
+    "dist/js"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "devDependencies": {
+    "@custom-elements-manifest/analyzer": "^0.6.3",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-typescript": "^8.3.4",
+    "@types/jasmine": "^4.0.0",
+    "@types/node": "^17.0.29",
+    "@typescript-eslint/eslint-plugin": "^5.33.0",
+    "@typescript-eslint/parser": "^5.33.0",
+    "del-cli": "^5.0.0",
+    "eslint": "^8.21.0",
+    "eslint-plugin-custom-elements": "^0.0.6",
+    "eslint-plugin-jasmine": "^4.1.3",
+    "eslint-plugin-no-unsanitized": "^4.0.1",
+    "jasmine": "^3.10.0",
+    "jasmine-core": "^3.10.1",
+    "karma": "^6.4.1",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-coverage": "^2.2.0",
+    "karma-jasmine": "^5.1.0",
+    "karma-jasmine-html-reporter": "^1.7.0",
+    "karma-requirejs": "^1.1.0",
+    "karma-sinon": "^1.0.5",
+    "karma-sourcemap-loader": "^0.3.8",
+    "karma-spec-reporter": "^0.0.32",
+    "rollup": "^2.60.2",
+    "rollup-plugin-ts": "^3.2.0",
+    "sinon": "^11.1.2",
+    "ts-node": "^10.9.1",
+    "ts-sinon": "^2.0.2",
+    "typescript": "^4.5.4"
+  },
+  "dependencies": {
+    "terser": "^5.20.0"
+  }
+}
