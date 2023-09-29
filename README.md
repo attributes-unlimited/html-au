@@ -52,8 +52,12 @@ Which is equivalent to
 ``` js
   const ele = document.createElement('div', {is: 'hello-world'} )
   ele.setAttribute('msg','nice to meet you')
-  // pre connectedCallback <div is="hello-world" msg="nice to meet you"></div>
-  // post connectedCallback <div is="hello-world" msg="nice to meet you">nice to meet you<div>
+  ele.setAttribute('is', 'hello-world')
+
+  // before render
+  <div is="hello-world" msg="nice to meet you"></div>
+  // rendered
+  <div is="hello-world" msg="nice to meet you">nice to meet you<div>
 ```
 
 customElement
