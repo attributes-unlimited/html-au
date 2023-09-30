@@ -10,9 +10,6 @@ export function parseAuCed(raw:string, auConfig:auConfigType, ele){
   }
 
   if(raw === 'patch'){
-    if(ele.getAttribute('au-include') === null){
-      throw new Error('patch without a component name, most have an associated includes ')
-    }
     return {
       raw,
       verb: 'patch',

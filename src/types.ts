@@ -109,13 +109,11 @@ export type workflowArgs = eventSetupArgs & {
  */
 export type pluginDefinition = {
   name: string
-  preflight:(esa:eventSetupArgs, piArgs?:any)=>void
+  preflight?:(esa:eventSetupArgs, piArgs?:any)=>void
   // this could be an array
-  endEventCallback:{
+  endEventCallback?:{
     when: string
     callback: (pi: pluginArgs, args: any) => Promise<any>
     args: any
   }
-  // func: (pi: pluginArgs, args: any) => Promise<any>
-  
 }

@@ -1,7 +1,7 @@
 import { isAuElement } from './common.js';
 import { auConfigType } from './types.js';
 
-function recurseNodes(node: HTMLElement, auConfig: auConfigType) {
+export function recurseNodes(node: HTMLElement, auConfig: auConfigType) {
   if (node.nodeType === Node.ELEMENT_NODE) {
     // console.log(node?.tagName)
     node.childNodes.forEach(child => recurseNodes(child as HTMLHtmlElement, auConfig))
@@ -21,13 +21,18 @@ const getCallback = (auConfig: auConfigType) => {
   };
 }
 
+export const prepareAuConfig = (auConfig: auConfigType) => {
+  auConfig._plugins = {
+    atEnd: auConfig.plugins.filter(p => p.endEventCallback !== undefined),
+    preflight: auConfig.plugins.filter(p => p.preflight !== undefined)
+  }
+  return auConfig;
+}
+
 export function _auObserver(ele: HTMLElement, auConfig: auConfigType) {
   if (!Object.isFrozen(auConfig)) {
     // organize plugins once to improve performance
-    auConfig._plugins = {
-      atEnd: auConfig.plugins.filter(p => p.endEventCallback !== undefined),
-      preflight: auConfig.plugins.filter(p => p.preflight !== undefined)
-    }
+    prepareAuConfig(auConfig)
     Object.freeze(auConfig);
   }
   const callback = getCallback(auConfig);

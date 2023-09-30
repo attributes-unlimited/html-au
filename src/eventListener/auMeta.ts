@@ -1,6 +1,5 @@
 import { auConfigType, auMetaType } from '../types.js';
 import { CED } from '../utils/index.js';
-// import { defaultConfig } from '../../src/defaultConfig.js';
 import { parseAuCed } from './parseAuCed.js';
 import { guessTheTargetSelector } from './parseAuTarget.js';
 
@@ -20,16 +19,7 @@ export async function auMetaPrep(ele: HTMLElement, auConfig: auConfigType): Prom
     brains
   }
 
-  const auHost = ele.getAttribute('au-host');
-  if(auHost !== null && auHost.length > 1){
-    const hostT = ['au-target', 'au-include','au-ced'];
-    hostT.forEach(att =>{
-      if(ele.getAttribute(att) === "host"){
-        ele.setAttribute(att, auHost);
-        brains.push(`replaced ${att} with the value from au-host`);
-      }
-    })
-  }
+  // auHostPlugIn(ele,brains)
 
   return auMeta
 }

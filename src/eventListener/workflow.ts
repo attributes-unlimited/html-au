@@ -26,13 +26,14 @@ const removeOldEventListeners = async (ele: Element | DocumentFragment)=> {
   Array.from(ele.children).forEach(childEle => { removeOldEventListeners(childEle) })
 }
 
-export const workflow = async (wf: workflowArgs)=> {
+export const mainWorkflow = async (wf: workflowArgs)=> {
   const { ele, initialMeta, auConfig, e } = wf
 
   const auMeta = await getAuMeta(ele, initialMeta, auConfig)
 
+  // patch has a totally different workflow, this could even move up one level
   if (auMeta.auCed.raw === 'patch') {
-    auCedPatchWorkflow(wf, ele, auMeta)
+    auCedPatchWorkflow(wf, auMeta)
     return;
   }
   const cedEle = createElement<auCedEle>(auMeta.ced)

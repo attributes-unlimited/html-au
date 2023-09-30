@@ -1,5 +1,5 @@
 // create a form to help users create an au element and explain what is going on.
-import { defineElement, html } from "../../src";
+import { defineElement, html, idGen} from "../../src";
 
 defineElement('hello-try-it',class extends HTMLElement{
   model
@@ -7,6 +7,7 @@ defineElement('hello-try-it',class extends HTMLElement{
     this.textContent = "Hello World"
   }
 });
+
 export class AuElementGenerator extends HTMLElement{
 
   model = {
@@ -16,9 +17,16 @@ export class AuElementGenerator extends HTMLElement{
     elementname:'button',
     swap:'innerHTML'
   }
+
+  elementnameid = `elementname${idGen.next().value}`
+  cednameid = `cedname${idGen.next().value}`
+  targetselectorid = `targetselector${idGen.next().value}`
+  swapid = `swap${idGen.next().value}`
+  outputid = `output${idGen.next().value}`
+
   connectedCallback(){
     this.model.elementname = this.getAttribute('elementname') ?? this.model.elementname
-  
+
     const frag = this.templateLit()
     this.addElementNameButtons(frag);
     this.append(frag);
@@ -27,7 +35,7 @@ export class AuElementGenerator extends HTMLElement{
   }
 
   addElementNameButtons(frag){
-    const target = frag.querySelector(':scope label[for=elementname] + div')
+    const target = frag.querySelector(`:scope label[for=${this.elementnameid}] + div`)
     const eles = ['div', 'button','span', 'form','input'];
     eles.forEach(name =>{
       const x = html`<button
@@ -139,9 +147,9 @@ export class AuElementGenerator extends HTMLElement{
               au-preserve-focus
             >
                 <div class="form-group">
-                    <label for="elementname">Element Name:</label>
+                    <label for="${this.elementnameid}">Element Name:</label>
                     <div></div>
-                    <input type="text" id="elementname" name="elementname" value="${this.model.elementname}" required>
+                    <input id="${this.elementnameid}" type="text" id="elementname" name="elementname" value="${this.model.elementname}" required>
                 </div>
                 <div class="form-group">
                     <label for="eventname">Event Name:</label>
@@ -152,26 +160,26 @@ export class AuElementGenerator extends HTMLElement{
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="cedname">CED</label>
-                    <input type="text" id="cedname" name="cedname" value="${this.model.cedname}" required/>
+                    <label for="${this.cednameid}">CED</label>
+                    <input id="${this.cednameid}" type="text" id="cedname" name="cedname" value="${this.model.cedname}" required/>
                 </div>
                 
                 <div class="form-group">
-                    <label for="targetselector">Target CSS Selector:</label>
+                    <label for="${this.targetselectorid}">Target CSS Selector:</label>
                     <!-- <p class="details">The element already on the page you wish to overwrite with your custom element</p> -->
-                    <input type="text" id="targetselector" name="targetselector" value="${this.model.targetselector}" required/>
+                    <input id="${this.targetselectorid}" type="text" id="targetselector" name="targetselector" value="${this.model.targetselector}" required/>
                 </div>
                 <div class="form-group">
-                  <label for="swap">Swap</label>
-                  <select name="swap">
+                  <label for="${this.swapid}">Swap</label>
+                  <select id="${this.swapid}" name="swap">
                     <option name="innerhtml" value="innerHTML" ${this.model.swap === 'innerHTML'? 'selected':''} >innerHTML</option>
                     <option name="outerhtml" value="outerHTML" ${this.model.swap === 'outerHTML'? 'selected':''} >outerHTML</option>
                   </select>
                 </div>
                 <div class="form-group">
                   <label></label>
-                    <button 
-                      type="submit" 
+                    <button
+                      type="submit"
                       class="btn-submit"
                       au-target="closest element-generator"
                       au-ced="post element-generator"
@@ -180,8 +188,8 @@ export class AuElementGenerator extends HTMLElement{
                       >Submit</button>
                 </div>
                 <div class="form-group">
-                  <label>Output</label>
-<textarea rows="10">
+                  <label for="${this.outputid}">Output</label>
+<textarea id="${this.outputid}" rows="10">
 &lt;${this.model.elementname}
   au-trigger="${this.model.eventname}"
   au-target="${this.model.targetselector}"

@@ -8,7 +8,8 @@ export const swapOptions ={
 export const triggerOptions = {
   click:'click',
   input:'input',
-  change:'change'
+  change:'change',
+  empty:''
 }
 
 export const targetOptions = {

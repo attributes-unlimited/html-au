@@ -1,5 +1,5 @@
 import { triggerOptions } from "../auConstants.js";
-import { workflow } from "./workflow.js";
+import { mainWorkflow } from "./workflow.js";
 import { auConfigType, auElementType, eventSetupArgs, workflowArgs } from "../types.js";
 import { auMetaPrep } from "./auMeta.js";
 
@@ -14,7 +14,7 @@ export async function basicEventListener(eventSetup: eventSetupArgs) {
       await eventSetup.auConfig.workflow(eventSetup as workflowArgs)
     }else{
       // easier tracing and debugging, but allows for overriding
-      workflow(eventSetup as workflowArgs)
+      mainWorkflow(eventSetup as workflowArgs)
     }
     
   }, { signal: eventSetup.ele.auAbortController.signal })
