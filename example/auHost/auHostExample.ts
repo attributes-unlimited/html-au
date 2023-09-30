@@ -32,6 +32,9 @@ export class AuHostExample extends HTMLElement{
       <div class="au-host">
         <h3>AU-HOST example</h3>
         <p>au-host is to help prevent syntax errors and simplify the selector of a host or parent element</p>
+        <p>A preflight plug-in that replaces certain attributes with the value of host with the value in the au-host attribute.
+
+        </p>
 
         <textarea rows="10">
           <form is="my-form">
