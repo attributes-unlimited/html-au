@@ -19,8 +19,7 @@
     "skipLibCheck": true,
     "types": [
       "jasmine",
-      "sinon",
-      "./global.d.ts"
+      "sinon"
     ]
   },
   // let rollup handle src/bundlingExample - see rollup.config
