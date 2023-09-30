@@ -92,10 +92,8 @@ html`<div></div>` is our template literal sanitization library that returns a do
 ``` js
 import { html } from '../../src/utils/index.js'
 export const CLICK_COUNTER = 'click-counter'
-
 export class ClickCounter extends HTMLElement {
   body: FormData;
-
   connectedCallback() {
     const previousCount = Number(this?.body?.get('counter') ?? 0)
     const frag = html`
@@ -109,5 +107,4 @@ export class ClickCounter extends HTMLElement {
     this.append(frag)
   }
 }
-
 ```
