@@ -6,7 +6,7 @@ import { HelloWorldDiv } from './basic/helloWorld.js';
 import './patch/patch.js';
 import './store/store.js'
 import './auElementGenerator/auElementGenerator.js'
-
+import './auHost/auHostExample.js'
 defineElement('hello-msg', HelloWorldDiv,'div')
 
 auObserver(document.body, defaultConfig);
@@ -80,6 +80,12 @@ const pageLayout = html`
       au-target="main"
       au-swap="innerHTML"
       >AU Element Generator<a>
+      <a 
+      href="#auhost-example"
+      au-ced="get auhost-example"
+      au-target="main"
+      au-swap="innerHTML"
+      >au-host attribute<a>
       
   </nav>
   <main></main>

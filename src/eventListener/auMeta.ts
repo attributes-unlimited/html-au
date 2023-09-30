@@ -18,13 +18,10 @@ export async function auMetaPrep(ele: HTMLElement, auConfig: auConfigType): Prom
     trigger: ele.getAttribute('au-trigger'),
     brains
   }
-
-  // auHostPlugIn(ele,brains)
-
   return auMeta
 }
 
-export async function getAuMeta(ele: HTMLElement, initialMeta:Partial<auMetaType> ,auConfig: auConfigType): Promise<auMetaType> {
+export async function getAuMeta(ele: HTMLElement, initialMeta:Partial<auMetaType>, auConfig: auConfigType): Promise<auMetaType> {
 
   const auMeta = {
     trigger: initialMeta.trigger,
@@ -33,9 +30,6 @@ export async function getAuMeta(ele: HTMLElement, initialMeta:Partial<auMetaType
     auCed: parseAuCed(ele.getAttribute('au-ced'), auConfig, ele),
     auInclude:  ele.getAttribute('au-include'), //parseAuInclude(ele.getAttribute('au-include'), auConfig, ele),
     auSwap: ele.getAttribute('au-swap'),
-    // auHref: ele.getAttribute('au-href'),
-    // preserveFocus: ele.getAttribute('au-preserve-focus') !== null,
-    // attachSwapped: ele.getAttribute('au-attach-swapped') !== null,
     isThis: false,
     brains: initialMeta.brains,
     ced: {
