@@ -1,5 +1,5 @@
-import { auHref } from "../src/plugins/auHref/auHref.js";
-import { auElementType, pluginArgs } from "../src/types.js";
+import { auHref } from "../../src/plugins/auHref/auHref.js";
+import { auElementType, pluginArgs } from "../../src/types.js";
 
 const _window = {
   location:{

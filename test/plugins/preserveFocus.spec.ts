@@ -1,5 +1,5 @@
-import { createElement } from "../src/index.js";
-import { preserveFocus } from "../src/plugins/preserveFocus/preserveFocus.js";
+import { createElement } from "../../src/index.js";
+import { preserveFocus } from "../../src/plugins/preserveFocus/preserveFocus.js";
 
 describe('preserveFocus function', () => {
   it('should not preserve focus if "au-preserve-focus" attribute is not present', async () => {

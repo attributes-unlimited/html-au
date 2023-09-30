@@ -6,11 +6,6 @@ describe('getSelects Function', () => {
 
   beforeEach(() => {
     hostElement = document.createElement('div');
-    //document.body.appendChild(hostElement);
-  });
-
-  afterEach(() => {
-    // document.body.removeChild(hostElement);
   });
 
   it('should return null for no select elements', () => {
@@ -37,10 +32,8 @@ describe('getSelects Function', () => {
     hostElement.appendChild(select1);
     hostElement.appendChild(select2);
 
-    // Act
     const result = getSelects(hostElement);
 
-    // Assert
     expect(result).toEqual([
       [
         { name: 'select1', value: 'value1' },
@@ -53,7 +46,7 @@ describe('getSelects Function', () => {
     ]);
   });
 
-  
+
   it('should option with empty value should return the text', () => {
     // this is part of the browser spec, nothing special to code.
     const select1 = document.createElement('select');
