@@ -1,10 +1,9 @@
 import { _auObserver } from '../auObserver.js';
 import { isAuElement } from '../common.js';
-import { getIncludeElement, getTargetEle, replaceAuTarget } from './parseAuTarget.js';
-import { auCedEle, auElementType, auMetaType, pluginArgs, workflowArgs } from '../types.js';
+import { getTargetEle, replaceAuTarget } from './parseAuTarget.js';
+import { auCedEle, auElementType, pluginArgs, workflowArgs } from '../types.js';
 import { createElement } from '../utils/index.js';
-import { makeFormData } from './auFormData.js';
-import { attachServerRespToCedEle, isAuServer } from './auServerDSL.js';
+import { attachServerRespToCedEle } from './auServerDSL.js';
 import { getAuMeta } from './auMeta.js';
 import { auCedPatchWorkflow } from './auCedPatch.js';
 import { auCedPost } from './auCedPost.js';
@@ -32,7 +31,7 @@ export const mainWorkflow = async (wf: workflowArgs)=> {
   const auMeta = await getAuMeta(ele, initialMeta, auConfig)
 
   // patch has a totally different workflow, this could even move up one level
-  if (auMeta.auCed.raw === 'patch') {
+  if (auMeta.auCed.raw.startsWith('patch')) {
     auCedPatchWorkflow(wf, auMeta)
     return;
   }

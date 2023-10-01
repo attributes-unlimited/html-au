@@ -1,6 +1,6 @@
 {
   "name": "@attributes-unlimited/html-au",
-  "version": "0.0.4-beta",
+  "version": "0.0.5-beta",
   "description": "HTML driven reactivity with customElements",
   "author": "Eric Rohlfs",
   "main": "./dist/js/index.js",

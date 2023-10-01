@@ -23,9 +23,9 @@ export class PatchTest extends HTMLElement {
       <input type="number" name="counter" value="${(previousCounter + 1).toString()}" />
       <button
         au-trigger="click"
+        au-ced="patch"
         au-host="closest ${PATCH_TEST}"
         au-include="host"
-        au-ced="patch"
         au-target="host">click</button>
     `
     this.replaceChildren()

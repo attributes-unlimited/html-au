@@ -7,6 +7,7 @@ import './patch/patch.js';
 import './store/store.js'
 import './auElementGenerator/auElementGenerator.js'
 import './auHost/auHostExample.js'
+import './timerApp/index.js'
 defineElement('hello-msg', HelloWorldDiv,'div')
 
 auObserver(document.body, defaultConfig);
@@ -86,7 +87,12 @@ const pageLayout = html`
       au-target="main"
       au-swap="innerHTML"
       >au-host attribute<a>
-      
+    <a 
+      href="#timer-table"
+      au-ced="get timer-table"
+      au-target="main"
+      au-swap="innerHTML"
+      >Primeagen Timer</a>
   </nav>
   <main></main>
 `

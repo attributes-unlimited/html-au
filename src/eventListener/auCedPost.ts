@@ -14,10 +14,7 @@ export type copyEleDataType = {
 export const addBodyData = (all: copyEleDataType) => {
   const { hasBody, cedEle, formDataEle, fd } = all
   if (!hasBody) { return }
-  // todo: think about this copy everything over? maybe we want to always do this? or mabye never?
-  if (cedEle.tagName === formDataEle.tagName) {
-    cedEle.body = formDataEle.body
-  }
+  cedEle.body = formDataEle.body
   if (cedEle.body === undefined) {
     cedEle.body = new FormData()
   }
@@ -29,11 +26,7 @@ export const addBodyData = (all: copyEleDataType) => {
 export const addModelData = (all) => {
   const { hasModel, cedEle, formDataEle, fd } = all
   if (!hasModel) { return }
-   // todo: think about this copy everything over? maybe we want to always do this? or mabye never?
-  // note: difference between this and patch don't need to do this on the patch wf because these should already exist
-  if (cedEle.tagName === formDataEle.tagName) {
-    cedEle.model = formDataEle.model
-  }
+  cedEle.model = formDataEle.model
   if (cedEle.model === undefined) {
     cedEle.model = {}
   }
@@ -43,7 +36,7 @@ export const addModelData = (all) => {
 }
 
 export function auCedPost(pia: pluginArgs) {
-  const { auMeta, ele, cedEle} = pia;
+  const { auMeta, ele, cedEle } = pia;
   // not sure this is any different for get or post
   if (!(auMeta.auCed.verb === 'post' && !isAuServer(auMeta))) { return }
   const formDataEle = getIncludeElement(ele, auMeta) as auElementType

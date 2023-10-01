@@ -9,7 +9,7 @@ export function parseAuCed(raw:string, auConfig:auConfigType, ele){
     throw new Error(`au-ced attribute cannot be empty on ele ${ele.tagName}`)
   }
 
-  if(raw === 'patch'){
+  if(raw.startsWith('patch')){
     return {
       raw,
       verb: 'patch',
