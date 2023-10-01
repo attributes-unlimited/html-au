@@ -19,9 +19,11 @@ It is a mutation observer that creates eventListeners based on html attributes.
 
 # Primeagen Dislikes of lit-html
 
+In his video he states what he does not like about lit-html. I'm contrasting those comments to evaluate html-au
+
 ## Compile Step
 
-No compile step is needed.
+No compile step is needed for html-au
 
 Setup is simply importing the library and observing a top level element like document.body.
 
