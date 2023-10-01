@@ -88,7 +88,7 @@ export class HelloWorld extends HTMLElement{
 
 Click counter custom element
 
-html`<div></div>` is our template literal sanitization library that returns a document fragment
+html is a simple template literal sanitization library that returns a document fragment
 ``` js
 import { html } from '../../src/utils/index.js'
 export const CLICK_COUNTER = 'click-counter'
