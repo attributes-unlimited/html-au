@@ -19,7 +19,7 @@ It is a mutation observer that creates eventListeners based on html attributes.
 
 # Primeagen Dislikes of lit-html
 
-In his video he states what he does not like about lit-html. I'm contrasting those comments to evaluate html-au
+In his video he states what he does not like about lit-html. I am evaluating html-au against those points.
 
 ## Compile Step
 
