@@ -2,6 +2,7 @@
 
 https://www.youtube.com/watch?v=z86ToVPx42Y
 
+Example code for an html-au version of the app talked about in the video can be found in the examples folder at examples/timerApp/index.ts
 
 ## What is html-au
 It is a mutation observer that creates eventListeners for you based on attributes on an element.
@@ -16,8 +17,7 @@ It is a mutation observer that creates eventListeners for you based on attribute
 - importing any html-au functions in your code is optional
 - no decorators
 
-Primeagen Dislikes
-
+# Primeagen Dislikes of lit-html
 
 ## Compile Step
 
