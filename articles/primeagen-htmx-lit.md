@@ -19,7 +19,7 @@ It is a mutation observer that creates eventListeners based on html attributes.
 
 # Primeagen Dislikes of lit-html
 
-In his video he states what he does not like about lit-html. I am evaluating html-au against those points.
+Applying Primeagens critisms of lit to html-au to see how html-au stacks up.
 
 ## Compile Step
 
@@ -65,9 +65,9 @@ Nothing special for debugging when using html-au.
 ## html backticks
 [this is the thing I don't want](https://www.youtube.com/watch?v=z86ToVPx42Y&t=24m33s)
 
-Breakdown into the things Primagen doesn't like.
+The things Primagen doesn't like.
 
-1. Using template literals.
+1. Using template literals?
 2. Importing a black magic library?
 
 On template literals: The whole goal of HTML-AU is to match an HTMX project in the lines of code written and code complexity. HTML has to be written somewhere. For an existing php project, HTMX makes lots of sense. HTML-AU is more suited to apps that have an existing json data api based project. Or for teams that want to do templating work in JavaScript. Also, if HTML-AU isn't enough, adding event listeners and directly mesing with the dom will not cause issues like they do in vue, angular, and react. The offramp is very easy. Just remove the attributes!
@@ -91,11 +91,11 @@ You can use content security policies if you like. I don't use the built in cont
 ## When to know when mounted
 [mounted discussion](https://www.youtube.com/watch?v=z86ToVPx42Y&t=25m40s)
 
-html-au doesn't care. That is part of the custom element spec. The function of connectedCallback(){ .... your code}
+html-au doesn't care. That is part of the custom element spec and the function of connectedCallback(){ .... your code}
 
 
 ## Don't want to use Typescript
-Do not have to use Typescript. Types are there if you want them.
+Do not have to use Typescript in html-au. Types are there if you want them.
 
 [Typescript discussion](https://www.youtube.com/watch?v=z86ToVPx42Y&t=28m25s)
 
