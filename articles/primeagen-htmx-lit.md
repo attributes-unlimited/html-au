@@ -42,7 +42,7 @@ If not using a bundler, it is recommended to copy the library out of the node_mo
 Improvement opportunity: make observer order not important.
 
 ## Decorators
-No decorators
+No decorators in html-au.
 
 [Youtube](https://www.youtube.com/watch?v=z86ToVPx42Y&t=9m25s)
 
@@ -51,7 +51,8 @@ No decorators
 
 [Youtube](https://www.youtube.com/watch?v=z86ToVPx42Y&t=14m00s)
 
-Nothing special for debugging.
+Nothing special for debugging when using html-au.
+
 1. look in the console. An effort has been made to export helpful errors.
 
 2. look at the attributes on the live rendered element. In some cases attributes can be ommitted, in these cases, the attribute is added for to the element for easier debugging. When assumptions are made, the assumption decision is available in ele.auMeta.brains string array.
