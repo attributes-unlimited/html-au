@@ -22,7 +22,7 @@ Post to the SERVER first, to translate the message, then post to the component t
 
 Unlike HTMX, HTML-AU does not try to conform to [HATEOAS](https://en.wikipedia.org/wiki/HATEOAS)
 ## Install
-```npm i html-au```
+```npm i @attributes-unlimited/html-au```
 
 
 ## Project Technical Summary
