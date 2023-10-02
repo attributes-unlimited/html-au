@@ -1,8 +1,11 @@
 import { swapOptions, targetOptions } from "../auConstants.js";
 import { auMetaType, pluginArgs } from "../types.js";
 
-
-export function guessTheTargetSelector(ele, auMeta) {
+/**
+ * The issue with this is when it's discovered.
+ * It is after the 
+ */
+export function guessTheTargetSelector(ele, auMeta:auMetaType) {
   // potential foot gun, guess a target when null
   if (auMeta.targetSelector === null) {
     // if no children search up the tree
@@ -13,6 +16,7 @@ export function guessTheTargetSelector(ele, auMeta) {
     }
     ele.setAttribute('au-target', auMeta.targetSelector)
     auMeta.brains.push('au-target was empty so one was added for you.')
+    console.warn(`'guess the target selector' is being deprecated. Please correct your code. ${ele.tagName} ${auMeta.ced.tagName}`)
   }
 }
 

@@ -462,7 +462,7 @@ export async function run(extension) {
         'div:nth-of-type(2) > input'
       ],
       [
-        'xpath//html/body/a/main/patch-example/div[2]/input'
+        'xpath//html/body/a/main/epatch-example/div[2]/input'
       ],
       [
         'pierce/div:nth-of-type(2) > input'
@@ -479,7 +479,7 @@ export async function run(extension) {
         'div:nth-of-type(2) > input'
       ],
       [
-        'xpath//html/body/a/main/patch-example/div[2]/input'
+        'xpath//html/body/a/main/epatch-example/div[2]/input'
       ],
       [
         'pierce/div:nth-of-type(2) > input'
@@ -498,7 +498,7 @@ export async function run(extension) {
         'div:nth-of-type(2) > button'
       ],
       [
-        'xpath//html/body/a/main/patch-example/div[2]/button'
+        'xpath//html/body/a/main/epatch-example/div[2]/button'
       ],
       [
         'pierce/div:nth-of-type(2) > button'
@@ -519,7 +519,7 @@ export async function run(extension) {
         'select'
       ],
       [
-        'xpath//html/body/a/main/patch-example/div[4]/select'
+        'xpath//html/body/a/main/epatch-example/div[4]/select'
       ],
       [
         'pierce/select'
@@ -540,7 +540,7 @@ export async function run(extension) {
         'select'
       ],
       [
-        'xpath//html/body/a/main/patch-example/div[4]/select'
+        'xpath//html/body/a/main/epatch-example/div[4]/select'
       ],
       [
         'pierce/select'
@@ -559,7 +559,7 @@ export async function run(extension) {
         'div:nth-of-type(4) > button:nth-of-type(1)'
       ],
       [
-        'xpath//html/body/a/main/patch-example/div[4]/button[1]'
+        'xpath//html/body/a/main/epatch-example/div[4]/button[1]'
       ],
       [
         'pierce/div:nth-of-type(4) > button:nth-of-type(1)'
@@ -582,7 +582,7 @@ export async function run(extension) {
         'a button'
       ],
       [
-        'xpath//html/body/a/main/patch-example/button'
+        'xpath//html/body/a/main/epatch-example/button'
       ],
       [
         'pierce/a button'

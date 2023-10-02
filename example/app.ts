@@ -62,18 +62,19 @@ const pageLayout = html`
       >Dialog Buttons</a>
 
     <a 
-      href="#patch-example"
-      au-ced="post patch-example"
+      href="#epatch-example"
+      au-ced="post epatch-example"
       au-target="main"
       au-swap="innerHTML"
       >Patch Example<a>
-    
+    <!-- this one is wrong I think href does not match the ced
     <a 
       href="#simple-store"
-      au-ced="patch-example"
+      au-ced="epatch-example"
       au-target="main"
       au-swap="innerHTML"
       >Simple Store<a>
+      -->
     
       <a 
       href="#element-generator"

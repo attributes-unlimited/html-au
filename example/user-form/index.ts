@@ -81,6 +81,7 @@ export class UserForm extends HTMLElement {
             au-ced="post ${USER_FORM}"
             au-include="closest ${USER_FORM}"
             au-server="post ${apiUrl}"
+            au-target="closest ${USER_FORM}"
             >Submit POST</button>
           <button
             type="submit"
@@ -89,6 +90,7 @@ export class UserForm extends HTMLElement {
             au-ced="post ${USER_FORM}"
             au-include="closest ${USER_FORM}"
             au-server="get ${apiUrl}"
+            au-target="closest ${USER_FORM}"
             >Submit GET</button>
           </div>
     `

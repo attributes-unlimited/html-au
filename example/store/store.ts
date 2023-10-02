@@ -45,7 +45,7 @@ export class SimpleStore extends HTMLElement {
     return html`
       <h3>${this.model.favorite_color ?? ''} is your favorite color.</h3>
       <button
-        au-target="closest main"
+        au-target="closest ${SIMPLE_STORE}"
         au-ced="post ${SIMPLE_STORE}"
         name="start_over"
         >Start Over</button>
@@ -68,20 +68,22 @@ export class SimpleStore extends HTMLElement {
         <button
           au-include="closest ${SIMPLE_STORE}"
           au-ced="post ${SIMPLE_STORE}"
+          au-target="closest ${SIMPLE_STORE}"
           name="add"
           >Add</button>
       </div>
       <div>
         <select name="favorite_color"><select>
         <button
-          au-include="closest ${SIMPLE_STORE}"
           au-ced="post ${SIMPLE_STORE}"
           name="start_over"
-          >Start Over</button>
+          au-target="closest ${SIMPLE_STORE}"
+          >Start Over doesn't work in store</button>
         <button
           au-include="closest ${SIMPLE_STORE}"
           au-ced="post ${SIMPLE_STORE}"
           name="submit"
+          au-target="closest ${SIMPLE_STORE}"
           >Submit</button>
       </div>
     `

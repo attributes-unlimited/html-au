@@ -3,7 +3,6 @@ import { CED } from '../utils/index.js';
 import { parseAuCed } from './parseAuCed.js';
 import { guessTheTargetSelector } from './parseAuTarget.js';
 
-
 export async function auMetaPrep(ele: HTMLElement, auConfig: auConfigType): Promise<Partial<auMetaType>>{
   const brains = []
   if (ele.getAttribute('au-trigger') === null) {
@@ -14,6 +13,18 @@ export async function auMetaPrep(ele: HTMLElement, auConfig: auConfigType): Prom
     ele.setAttribute('au-swap', auConfig.defaultAttributes['au-swap']);
     brains.push('au-swap was empty. The default in the config was added for you.')
   }
+
+  if(ele.getAttribute('au-ced') === 'patch'){
+    // more descriptive of what is being patched
+    ele.setAttribute('au-ced', 'patch include');
+    console.warn('Please use patch target or patch include for au-ced.')
+    brains.push('au-ced="patch" was changed to au-ced="patch include".')
+  }
+
+  if(ele.getAttribute('au-ced').startsWith('patch-')){
+    console.warn('Not wise to name your component after a reserved ced verb "patch-" ')
+  }
+
   const auMeta = {
     trigger: ele.getAttribute('au-trigger'),
     brains
@@ -24,7 +35,7 @@ export async function auMetaPrep(ele: HTMLElement, auConfig: auConfigType): Prom
 export async function getAuMeta(ele: HTMLElement, initialMeta:Partial<auMetaType>, auConfig: auConfigType): Promise<auMetaType> {
 
   const auMeta = {
-    trigger: initialMeta.trigger,
+    trigger: initialMeta.trigger, //eventlistener already running when trigger is set
     server: ele.getAttribute('au-server'),
     targetSelector: ele.getAttribute('au-target'),
     auCed: parseAuCed(ele.getAttribute('au-ced'), auConfig, ele),

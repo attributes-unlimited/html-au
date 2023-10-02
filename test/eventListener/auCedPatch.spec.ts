@@ -42,7 +42,7 @@ describe('auCedPatch', () => {
         tagName: PATCH_TEST,
         attributes: {
           'au-trigger': 'input',
-          'au-ced': 'patch'
+          'au-ced': 'patch include'
         }
       })
 

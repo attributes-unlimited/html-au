@@ -56,6 +56,7 @@ export class DialogButtons extends HTMLElement {
         name="button_action"
         ${disabled}
         value="showModal"
+        au-target="closest dialog-buttons"
         >post dialog.showModal</button>
 
         <div id='dialog-placeholder-2'>
