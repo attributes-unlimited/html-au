@@ -20,7 +20,6 @@ Post to the SERVER first, to translate the message, then post to the component t
   <main><hello-msg>Hallo Welt</hello-msg></main>
  ```
 
-Unlike HTMX, HTML-AU does not try to conform to [HATEOAS](https://en.wikipedia.org/wiki/HATEOAS)
 ## Install
 ```npm i @attributes-unlimited/html-au```
 
