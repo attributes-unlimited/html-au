@@ -1,6 +1,6 @@
 import { createElement, defineElement, html } from '../../src/index.js'
 
-const PATCH_EXAMPLE = 'patch-example';
+const PATCH_EXAMPLE = 'epatch-example';
 
 export class PatchExample extends HTMLElement {
  model = {
@@ -51,6 +51,7 @@ export class PatchExample extends HTMLElement {
     return html`
       <h3>${this.model.favorite_color ?? ''} is your favorite color.</h3>
       <button
+        au-trigger="click"
         au-target="closest ${PATCH_EXAMPLE}"
         au-ced="get ${PATCH_EXAMPLE}"
         name="start_over"
@@ -77,8 +78,9 @@ export class PatchExample extends HTMLElement {
         <input name="new_color" />
         <button
           au-include="closest ${PATCH_EXAMPLE}"
-          au-ced="patch"
+          au-ced="patch include"
           name="add"
+          au-target="closest ${PATCH_EXAMPLE}"
           >Add</button>
       </div>
       <div></div>
@@ -86,13 +88,15 @@ export class PatchExample extends HTMLElement {
         <select name="favorite_color"><select>
         <button
           au-include="closest ${PATCH_EXAMPLE}"
-          au-ced="patch"
+          au-ced="patch include"
           name="submit"
+          au-target="closest ${PATCH_EXAMPLE}"
           >Submit</button>
         <button
           au-include="closest ${PATCH_EXAMPLE}"
-          au-ced="patch"
+          au-ced="patch include"
           name="start_over"
+          au-target="closest ${PATCH_EXAMPLE}"
           >Start Over</button>
       </div>
     `

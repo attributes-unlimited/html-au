@@ -348,7 +348,7 @@ const puppeteer = require('puppeteer'); // v20.7.4 or later
     const targetPage = page;
     await puppeteer.Locator.race([
       targetPage.locator('div:nth-of-type(2) > input'),
-      targetPage.locator('::-p-xpath(/html/body/a/main/patch-example/div[2]/input)'),
+      targetPage.locator('::-p-xpath(/html/body/a/main/epatch-example/div[2]/input)'),
       targetPage.locator(':scope >>> div:nth-of-type(2) > input')
     ])
       .setTimeout(timeout)
@@ -363,7 +363,7 @@ const puppeteer = require('puppeteer'); // v20.7.4 or later
     const targetPage = page;
     await puppeteer.Locator.race([
       targetPage.locator('div:nth-of-type(2) > input'),
-      targetPage.locator('::-p-xpath(/html/body/a/main/patch-example/div[2]/input)'),
+      targetPage.locator('::-p-xpath(/html/body/a/main/epatch-example/div[2]/input)'),
       targetPage.locator(':scope >>> div:nth-of-type(2) > input')
     ])
       .setTimeout(timeout)
@@ -374,7 +374,7 @@ const puppeteer = require('puppeteer'); // v20.7.4 or later
     await puppeteer.Locator.race([
       targetPage.locator('::-p-aria(Add)'),
       targetPage.locator('div:nth-of-type(2) > button'),
-      targetPage.locator('::-p-xpath(/html/body/a/main/patch-example/div[2]/button)'),
+      targetPage.locator('::-p-xpath(/html/body/a/main/epatch-example/div[2]/button)'),
       targetPage.locator(':scope >>> div:nth-of-type(2) > button')
     ])
       .setTimeout(timeout)
@@ -390,7 +390,7 @@ const puppeteer = require('puppeteer'); // v20.7.4 or later
     await puppeteer.Locator.race([
       targetPage.locator('::-p-aria([role=\\"main\\"]) >>>> ::-p-aria([role=\\"combobox\\"])'),
       targetPage.locator('select'),
-      targetPage.locator('::-p-xpath(/html/body/a/main/patch-example/div[4]/select)'),
+      targetPage.locator('::-p-xpath(/html/body/a/main/epatch-example/div[4]/select)'),
       targetPage.locator(':scope >>> select')
     ])
       .setTimeout(timeout)
@@ -406,7 +406,7 @@ const puppeteer = require('puppeteer'); // v20.7.4 or later
     await puppeteer.Locator.race([
       targetPage.locator('::-p-aria([role=\\"main\\"]) >>>> ::-p-aria([role=\\"combobox\\"])'),
       targetPage.locator('select'),
-      targetPage.locator('::-p-xpath(/html/body/a/main/patch-example/div[4]/select)'),
+      targetPage.locator('::-p-xpath(/html/body/a/main/epatch-example/div[4]/select)'),
       targetPage.locator(':scope >>> select')
     ])
       .setTimeout(timeout)
@@ -417,7 +417,7 @@ const puppeteer = require('puppeteer'); // v20.7.4 or later
     await puppeteer.Locator.race([
       targetPage.locator('::-p-aria(Submit)'),
       targetPage.locator('div:nth-of-type(4) > button:nth-of-type(1)'),
-      targetPage.locator('::-p-xpath(/html/body/a/main/patch-example/div[4]/button[1])'),
+      targetPage.locator('::-p-xpath(/html/body/a/main/epatch-example/div[4]/button[1])'),
       targetPage.locator(':scope >>> div:nth-of-type(4) > button:nth-of-type(1)'),
       targetPage.locator('::-p-text(Submit)')
     ])
@@ -434,7 +434,7 @@ const puppeteer = require('puppeteer'); // v20.7.4 or later
     await puppeteer.Locator.race([
       targetPage.locator('::-p-aria(Start Over)'),
       targetPage.locator('a button'),
-      targetPage.locator('::-p-xpath(/html/body/a/main/patch-example/button)'),
+      targetPage.locator('::-p-xpath(/html/body/a/main/epatch-example/button)'),
       targetPage.locator(':scope >>> a button'),
       targetPage.locator('::-p-text(Start Over)')
     ])

@@ -15,7 +15,7 @@ import { getIncludeElement, getTargetEle } from "./parseAuTarget.js"
  *      au-trigger="click"
  *      au-host="closest form"
  *      au-include="host"
- *      au-ced="patch"
+ *      au-ced="patch include"
  *      au-target="host">click</button>
  * 
  */
@@ -25,7 +25,7 @@ export const auCedPatchWorkflow = (wf:workflowArgs, auMeta:auMetaType) => {
   const includedEle = auMeta.auInclude === null ? ele : getIncludeElement(ele, auMeta) as auElementType
   // note: user gets to decide which format by what they put in their componet
   const fd = makeFormData(includedEle, ele)
-
+  // the default is to patch the included ele
   const target = auMeta.auCed.raw === 'patch target' ? getTargetEle(ele, auMeta.targetSelector) as auElementType: includedEle;
   const hasBody = target.hasOwnProperty('body')
   const hasModel = target.hasOwnProperty('model')
@@ -59,5 +59,5 @@ export const auCedPatchWorkflow = (wf:workflowArgs, auMeta:auMetaType) => {
   //note: thought about clearing the children here, but decided to leave that control to the component
   includedEle.connectedCallback();
 
-  //todo: should run the post plugins
+  //todo: should we run the end plugins
 }

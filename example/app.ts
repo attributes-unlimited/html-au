@@ -16,14 +16,14 @@ const pageLayout = html`
   <h1>Examples Scratchpad </h1>
   <nav>
     <button
-      au-href="use au-ced"
+      au-hash="use au-ced"
       au-ced='get div?is=hello-msg&msg=Hello World'
       au-swap="innerHTML"
       au-target="main"
       >Hello Message using get</button>
     <!-- todo this should still work and copy the query params over -->
     <button
-      au-href="#div?is=hello-msg&msg=Hello"
+      au-hash="#div?is=hello-msg&msg=Hello"
       au-ced="post div?is=hello-msg&msg=Hello"
       au-swap="innerHTML"
       au-target="main"
@@ -62,18 +62,19 @@ const pageLayout = html`
       >Dialog Buttons</a>
 
     <a 
-      href="#patch-example"
-      au-ced="post patch-example"
+      href="#epatch-example"
+      au-ced="post epatch-example"
       au-target="main"
       au-swap="innerHTML"
       >Patch Example<a>
-    
+    <!-- this one is wrong I think href does not match the ced
     <a 
       href="#simple-store"
-      au-ced="patch-example"
+      au-ced="epatch-example"
       au-target="main"
       au-swap="innerHTML"
       >Simple Store<a>
+      -->
     
       <a 
       href="#element-generator"
