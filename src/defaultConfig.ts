@@ -6,6 +6,7 @@ import { auConfigType } from "./types.js";
 import { preserveFocusPlugin } from "./plugins/preserveFocus/index.js";
 import { auHrefPlugin } from "./plugins/auHref/index.js";
 import { auHostPlugIn } from "./plugins/auHost/index.js";
+import { auHashPlugin } from "./plugins/auHash/index.js";
 
 // for now the assumption is that all responses will be json 
 // you can send data to the server as FormData or json, but the response should be json
@@ -22,5 +23,5 @@ export const defaultConfig = {
   auCed:{
     verb:'post'
   },
-  plugins:[ auHrefPlugin, preserveFocusPlugin, auHostPlugIn]
+  plugins:[ auHrefPlugin, preserveFocusPlugin, auHostPlugIn, auHashPlugin]
 } as auConfigType

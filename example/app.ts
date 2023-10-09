@@ -16,14 +16,14 @@ const pageLayout = html`
   <h1>Examples Scratchpad </h1>
   <nav>
     <button
-      au-href="use au-ced"
+      au-hash="use au-ced"
       au-ced='get div?is=hello-msg&msg=Hello World'
       au-swap="innerHTML"
       au-target="main"
       >Hello Message using get</button>
     <!-- todo this should still work and copy the query params over -->
     <button
-      au-href="#div?is=hello-msg&msg=Hello"
+      au-hash="#div?is=hello-msg&msg=Hello"
       au-ced="post div?is=hello-msg&msg=Hello"
       au-swap="innerHTML"
       au-target="main"
