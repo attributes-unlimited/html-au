@@ -20,6 +20,7 @@ const pageLayout = html`
       au-ced='get div?is=hello-msg&msg=Hello World'
       au-swap="innerHTML"
       au-target="main"
+      au-view-transition
       >Hello Message using get</button>
     <!-- todo this should still work and copy the query params over -->
     <button
@@ -27,6 +28,7 @@ const pageLayout = html`
       au-ced="post div?is=hello-msg&msg=Hello"
       au-swap="innerHTML"
       au-target="main"
+      au-view-transition
       > Hello Message post</button>
 
     <a 
@@ -35,6 +37,7 @@ const pageLayout = html`
       au-ced="post click-counter"
       au-target="main"
       au-swap="innerHTML"
+      au-view-transition
       >Click Counter</a>
 
       <a 
@@ -43,6 +46,7 @@ const pageLayout = html`
       au-ced="post user-form"
       au-target="main"
       au-swap="innerHTML"
+      au-view-transition
       >User Form</a>
 
       <a 
@@ -51,6 +55,7 @@ const pageLayout = html`
       au-ced="post user-form"
       au-target="main"
       au-swap="innerHTML"
+      au-view-transition
       >User Form</a>
       
       <!-- automatically adds trigger='click' from the default config -->
@@ -59,6 +64,7 @@ const pageLayout = html`
       au-ced="post dialog-buttons?open"
       au-target="main"
       au-swap="innerHTML"
+      au-view-transition
       >Dialog Buttons</a>
 
     <a 
@@ -66,6 +72,7 @@ const pageLayout = html`
       au-ced="post epatch-example"
       au-target="main"
       au-swap="innerHTML"
+      au-view-transition
       >Patch Example<a>
     <!-- this one is wrong I think href does not match the ced
     <a 
@@ -81,18 +88,21 @@ const pageLayout = html`
       au-ced="element-generator"
       au-target="main"
       au-swap="innerHTML"
+      au-view-transition
       >AU Element Generator<a>
       <a 
       href="#auhost-example"
       au-ced="get auhost-example"
       au-target="main"
       au-swap="innerHTML"
+      au-view-transition
       >au-host attribute<a>
     <a 
       href="#timer-table"
       au-ced="get timer-table"
       au-target="main"
       au-swap="innerHTML"
+      au-view-transition
       >Primeagen Timer</a>
   </nav>
   <main></main>
