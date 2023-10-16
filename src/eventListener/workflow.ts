@@ -57,13 +57,26 @@ export const mainWorkflow = async (wf: workflowArgs)=> {
 
   // todo: clear up the language between the targetElement and the event target element. The event target is what kicks everything off like a button is clicked on. The button is the eventTargetEle. 
   //       the target or targetEle is where we are going to insert the newEle created by CED into the DOM.
+
+
   const target = getTargetEle(ele, auMeta.targetSelector)
   plugInArgs.targetEle = target
 
-  const toDispose = replaceAuTarget(plugInArgs)
-  wf.auConfig._plugins.atEnd.forEach(pi => pi.endEventCallback.callback(plugInArgs, pi.endEventCallback.args))
+  let toDispose = new DocumentFragment()
+  // @ts-ignore
+  if(plugInArgs.ele.hasAttribute('au-view-transition') && document.startViewTransition){
+     // @ts-ignore
+    document.startViewTransition(()=>{
+      toDispose = replaceAuTarget(plugInArgs)
+      wf.auConfig._plugins.atEnd.forEach(pi => pi.endEventCallback.callback(plugInArgs, pi.endEventCallback.args))
+      removeOldEventListeners(toDispose)
+    })
+  }else{
+    toDispose = replaceAuTarget(plugInArgs)
+    wf.auConfig._plugins.atEnd.forEach(pi => pi.endEventCallback.callback(plugInArgs, pi.endEventCallback.args))
+    removeOldEventListeners(toDispose)
+  }
 
-  removeOldEventListeners(toDispose)
   // todo: explore destroying other objects that are no longer needed
   return plugInArgs;
 }
