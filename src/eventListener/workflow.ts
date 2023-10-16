@@ -63,7 +63,8 @@ export const mainWorkflow = async (wf: workflowArgs)=> {
   plugInArgs.targetEle = target
 
   let toDispose = new DocumentFragment()
-  if(plugInArgs.ele.hasAttribute('au-view-transition')){
+  // @ts-ignore
+  if(plugInArgs.ele.hasAttribute('au-view-transition') && document.startViewTransition){
      // @ts-ignore
     document.startViewTransition(()=>{
       toDispose = replaceAuTarget(plugInArgs)
