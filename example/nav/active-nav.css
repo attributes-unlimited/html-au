@@ -1,0 +1,29 @@
+#content {
+  display: flex;
+  gap: 20px;
+  
+}
+
+active-nav {
+  & ul {
+    list-style-type: none;
+    margin: 0%;
+    padding: 0%;
+  }
+
+  & li {
+    background-color: rgb(100, 100, 100);
+    color: white;
+    margin: 0%;
+    padding: 0%;
+  }
+
+  & li.active {
+    background-color: rgb(150, 150, 150);
+  }
+
+  & div {
+     /* min-width: 250px; */
+     padding: 0.5em 1em;
+  }
+}
