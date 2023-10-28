@@ -63,6 +63,7 @@ export const mainWorkflow = async (wf: workflowArgs)=> {
   plugInArgs.targetEle = target
 
   let toDispose = new DocumentFragment()
+  // todo: add error message that au-view-transition is not compatible with preserve focusS
   // @ts-ignore
   if(plugInArgs.ele.hasAttribute('au-view-transition') && document.startViewTransition){
      // @ts-ignore
