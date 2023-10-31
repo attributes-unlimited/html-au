@@ -37,7 +37,13 @@ jobs:
         with:
           node-version: "18.x"
       - run: npm ci
-      - run: npm run build 
+      - run: npm run build
+
+      - name: Copy examples
+        shell: bash
+        run: |
+          mkdir docs/examples
+          mv example/* docs/examples/
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v2.0.0
