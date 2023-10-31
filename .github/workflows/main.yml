@@ -2,11 +2,7 @@ on:
   push:
     branches:
       - main
-    paths-ignore:
-      - "**.md"
-  pull_request:
-    paths-ignore:
-      - "**.md"
+
   workflow_dispatch:
 
     # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
