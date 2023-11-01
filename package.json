@@ -5,8 +5,8 @@
   "author": "Eric Rohlfs",
   "main": "./dist/js/index.js",
   "scripts": {
-    "build": "tsc --project tsconfig.json & rollup --config ./rollup.browser.cfg",
-    "build1": "tsc --project tsconfig.json & rollup --config ./rollup.browser.cfg & rollup --config ./rollup.karma.cfg & terser ./dist/browser/js/index.js -o ./dist/browser/js/index.min.js --compress ecma=2015,computed_props=false",
+    "build-docs": "tsc --project tsconfig.json & rollup --config ./rollup.browser.cfg",
+    "build": "tsc --project tsconfig.json & rollup --config ./rollup.browser.cfg & rollup --config ./rollup.karma.cfg & terser ./dist/browser/js/index.js -o ./dist/browser/js/index.min.js --compress ecma=2015,computed_props=false",
     "dev": "rollup --config ./rollup.browser.cfg --watch",
     "test-once": "rollup --config ./rollup.karma.cfg & rollup --config ./rollup.browser.cfg",
     "build-test": "rollup --config ./rollup.karma.cfg --watch",
