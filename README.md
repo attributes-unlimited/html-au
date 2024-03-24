@@ -1,3 +1,8 @@
+This project is now TimberFrameJs see https://github.com/timberframejs/timberframejs/
+
+Just a name change. Everything else is the same.
+
+
 # HTML-AU
 HTML-AU is inspired by HTMX. Instead of rendering HTML on the server like HTMX, HTML-AU uses client-side JavaScript native customElements to generate HTML.
 
