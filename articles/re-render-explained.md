@@ -1,14 +1,14 @@
 
 # Re-render explained
 
-Fist, I'll explain what updates in native web component custom elements. Then then I'll explain re-render. Then HTML-au.
+First, I'll explain what updates in native web component custom elements. Then I'll explain re-rendering. Then HTML-au.
 
 Updates are when you render a component with data, then as the data changes you update just the data on the DOM. The existing elements stay and the goal is to update the smallest parts necessary.
 
 ``` js
-// I have not run this, but should give you enough of an idea of what is going on.
+// I have not run this but should give you enough of an idea of what is going on.
 // The update approach in custom elements (no htmx). A user enters data into the form, then the user sees their input in the divs below. 
-// This example is not too bad, but this is a simple example. Even so, few things could go wrong like misspelling selectors, ids, or input names. There are stratigies for this like using const first_name='first_name', but why, when we could just re-render the entire info template.
+// This example is not too bad, but this is a simple example. Even so, few things could go wrong like misspelling selectors, IDs, or input names. There are strategies for this like using const first_name='first_name', but why, when we could just re-render the entire info template.
 
 export class UserDetailsForm extends HTMLFormElement{
 
@@ -159,7 +159,7 @@ export class UserDetailsForm extends HTMLFormElement{
 
 In raw native web components with no framework, it has been said that a child reaching up to a parent element is not good and too tightly couples the components together.  Then what do we do?  Most use that some other strategy such as events. Events are good, but then the component needs to throw the event, then the parent needs to listen for the event. This is not too difficult. So now the components are decoupled, but are tied together via the eventing system.
 
-For me it depends on what I'm donig. In some cases I'll create a child component just to better organize my code and the parent and child know about each other. No events used. It's easier to query for the parent and call a class method than to wire up events.
+For me, it depends on what I'm doing. In some cases, I'll create a child component just to better organize my code and the parent and child know about each other. No events were used. It's easier to query for the parent and call a class method than to wire up events.
 
-HTML-au can be thought of as a DSL to facilitate child parent interactions. 
+HTML-au can be thought of as a DSL to facilitate child-parent interactions. 
 
