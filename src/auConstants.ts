@@ -2,7 +2,9 @@ export const swapOptions ={
   innerHTML:'innerHTML',
   outeHTML:'outerHTML',
   none:'none',
-  delete:'delete'
+  delete:'delete',
+  append:'append',
+  prepend:'prepend'
 }
 
 export const triggerOptions = {

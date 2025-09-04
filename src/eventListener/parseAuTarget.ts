@@ -116,6 +116,12 @@ export function replaceAuTarget(plugIn:pluginArgs){
     case swapOptions.delete:
       toDispose.appendChild(plugIn.targetEle);
       break;
+    case swapOptions.append:
+      plugIn.targetEle.append(plugIn.cedEle);
+      break;
+     case swapOptions.prepend:
+      plugIn.targetEle.prepend(plugIn.cedEle);
+      break;
     default:
       // outerHTML
       // this is most likely the issue with some cases not appending the previous swapped
